@@ -14,4 +14,6 @@ public interface IPaginaWebService {
     
     public Optional<PaginaWebDTO> findById(Long id);
     
+    public Optional<List<PaginaWebDTO>> findByCategoriasWebIdAndEstado(Long categoriaWebId, boolean estado);
+    
 }

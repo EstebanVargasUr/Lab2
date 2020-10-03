@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,14 +19,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 public class CategoriaWeb implements Serializable {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre", length = 100)
-    private String nombreAerolinea;
+    @Column(name = "nombre", length = 30)
+    private String nombre;
 
     @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.DATE)
@@ -34,9 +35,9 @@ public class CategoriaWeb implements Serializable {
 
     @Column
     private boolean estado;
-
-    @ManyToMany(mappedBy = "categoriaWeb")
-    private List<PaginaWeb> paginasWeb;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoriaWeb") 
+    private List<PaginaWeb_CategoriaWeb> paginasWeb_CategoriasWeb = new ArrayList<>();
 
     private static final long serialVersionUID = 1L;
 

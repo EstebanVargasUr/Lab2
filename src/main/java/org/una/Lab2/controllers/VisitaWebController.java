@@ -11,7 +11,7 @@ import org.una.Lab2.services.IVisitaWebService;
 
 @RestController
 @RequestMapping("/lab2_visitas_web") 
-@Api(tags = {"Visitas web"})
+@Api(tags = {"Visitas Web"})
 public class VisitaWebController {
 
     @Autowired

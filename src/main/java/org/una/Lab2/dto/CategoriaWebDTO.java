@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +14,6 @@ public class CategoriaWebDTO {
 
     private Long id;
     private String nombre;
-    private String cantidadPaginas;
     private Date fechaRegistro;
     private boolean estado;
 
