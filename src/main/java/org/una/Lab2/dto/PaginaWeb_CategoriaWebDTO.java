@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.una.Lab2.entities.CategoriaWeb;
+import org.una.Lab2.entities.PaginaWeb;
 
 /**
  *
@@ -13,9 +15,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor 
 @ToString
-public class NavegadorDTO {
+public class PaginaWeb_CategoriaWebDTO {
     
     private Long id; 
-    private String nombre;
-    private boolean modoIncognito; 
+    private PaginaWeb paginaWeb;
+    private CategoriaWeb categoriaWeb;
 }

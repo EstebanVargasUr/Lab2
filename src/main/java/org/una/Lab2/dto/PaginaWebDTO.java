@@ -21,6 +21,7 @@ public class PaginaWebDTO {
     private String nombre;
     private String descripcion;
     private Date fechaRegistro; 
+    private Date fechaModificacion;
     private float valoracion;
     private boolean estado; 
 }

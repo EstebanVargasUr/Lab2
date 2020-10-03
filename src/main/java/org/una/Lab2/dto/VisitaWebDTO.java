@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.Lab2.dto;
 
 import java.util.Date;
@@ -18,8 +13,6 @@ import org.una.Lab2.entities.PaginaWeb;
  * @author adrian
  */
 
-
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor 
@@ -29,6 +22,7 @@ public class VisitaWebDTO {
     private Long id; 
     private Date fechaConsulta;
     private Date fechaSalida;
-    private PaginaWeb paginaWeb;
+
     private Navegador navegador;
+    private PaginaWeb paginaWeb;
 }

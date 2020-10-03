@@ -45,4 +45,14 @@ public class PaginaWebController {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @GetMapping("/categoria/{id}{estado}")
+    @ApiOperation(value = "Obtiene un Pagina Web por su estado y Id de Categoria", response = PaginaWebDTO.class, tags = "Paginas Web")
+    public ResponseEntity<?> findByCategoriasWebIdAndEstado(@PathVariable(value = "id") Long id,@PathVariable(value = "estado") boolean estado) {
+        try {
+            return new ResponseEntity(paginaWebService.findByCategoriasWebIdAndEstado(id, estado), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

@@ -14,7 +14,7 @@ import org.una.Lab2.services.IVisitaWebService;
 
 
 @RestController
-@RequestMapping("/visitasWeb") 
+@RequestMapping("/lab2_visitas_web") 
 @Api(tags = {"Visitas Web"})
 public class VisitaWebController {
 

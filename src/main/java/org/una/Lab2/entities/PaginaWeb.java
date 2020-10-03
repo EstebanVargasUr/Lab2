@@ -48,15 +48,17 @@ public class PaginaWeb implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
     private Date fechaRegistro;
-   
-   
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "lab2_paginasWeb_categoriasWeb",
-            joinColumns = @JoinColumn(name = "lab2_categorias_web_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "lab2_paginas_web_id",
-                    referencedColumnName = "id"))
     
-    private List<CategoriaWeb> categoriaWeb;
+    @Column(name = "fecha_modificacion", updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @Setter(AccessLevel.NONE)
+    private Date fechaModificacion;
+   
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
+    private List<VisitaWeb> visitasWeb = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
+    private List<PaginaWeb_CategoriaWeb> paginasWeb_CategoriasWeb = new ArrayList<>();
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb")
     private List<VisitaWeb> visitasWeb = new ArrayList<>();
@@ -67,6 +69,11 @@ public class PaginaWeb implements Serializable {
     public void prePersist() {
         estado=true;
         fechaRegistro = new Date();
-
+        fechaModificacion = new Date();
+    }
+    
+    @PreUpdate
+    public void preUpdate() {
+        fechaModificacion = new Date();
     }
 }

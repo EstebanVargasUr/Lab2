@@ -55,4 +55,15 @@ public class PaginaWebServiceImplementation implements IPaginaWebService{
         return oneToDto(paginaWebRepository.findById(id));
     }
     
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<List<PaginaWebDTO>> findByCategoriasWebIdAndEstado(Long categoriaWebId,boolean estado) {
+        Optional<List<PaginaWeb>> result = paginaWebRepository.findByCategoriasWebIdAndEstado(categoriaWebId, estado);
+        if (result != null) {
+            return findList(result);
+        } else {
+            return null;
+        }
+    }
+
 }
