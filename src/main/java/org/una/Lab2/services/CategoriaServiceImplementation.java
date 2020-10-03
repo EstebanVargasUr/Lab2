@@ -1,14 +1,14 @@
-package org.una.services;
+package org.una.Lab2.services;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.una.dto.CategoriaWebDTO;
-import org.una.entities.CategoriaWeb;
-import org.una.repositories.ICategoriaWebRepository;
-import org.una.utils.MapperUtils;
+import org.una.Lab2.dto.CategoriaWebDTO;
+import org.una.Lab2.entities.CategoriaWeb;
+import org.una.Lab2.repositories.ICategoriaWebRepository;
+import org.una.Lab2.utils.MapperUtils;
 
 @Service
 public class CategoriaServiceImplementation implements ICategoriaWebService {

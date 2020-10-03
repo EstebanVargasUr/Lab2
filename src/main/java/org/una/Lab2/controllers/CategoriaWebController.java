@@ -1,4 +1,4 @@
-package org.una.controllers;
+package org.una.Lab2.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.una.dto.CategoriaWebDTO;
-import org.una.services.ICategoriaWebService;
+import org.una.Lab2.dto.CategoriaWebDTO;
+import org.una.Lab2.services.ICategoriaWebService;
 
 @RestController
 @RequestMapping("/lab2_categorias_web")

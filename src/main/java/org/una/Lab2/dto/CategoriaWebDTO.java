@@ -1,4 +1,4 @@
-package org.una.dto;
+package org.una.Lab2.dto;
 
 import java.util.Date;
 import lombok.AllArgsConstructor;

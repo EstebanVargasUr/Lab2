@@ -4,17 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -60,9 +51,13 @@ public class PaginaWeb implements Serializable {
    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
     private List<VisitaWeb> visitasWeb = new ArrayList<>();
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
-    private List<PaginaWeb_CategoriaWeb> paginasWeb_CategoriasWeb = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "lab2_paginasWeb_categoriasWeb",
+            joinColumns = @JoinColumn(name = "lab2_categorias_web_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "lab2_paginas_web_id",
+                    referencedColumnName = "id"))
+    private List<CategoriaWeb> categoriaWeb;
     
     private static final long serialVersionUID = 1L;
 

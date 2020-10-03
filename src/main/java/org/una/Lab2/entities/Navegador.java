@@ -37,7 +37,7 @@ public class Navegador {
     @Column
     private boolean modoIncognito;
    
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "navegador") 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "navegador")
     private List<VisitaWeb> visitasWeb = new ArrayList<>();
      
     private static final long serialVersionUID = 1L;

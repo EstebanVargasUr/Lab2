@@ -1,6 +1,6 @@
-package org.una.services;
+package org.una.Lab2.services;
 
-import org.una.dto.CategoriaWebDTO;
+import org.una.Lab2.dto.CategoriaWebDTO;
 import java.util.List;
 import java.util.Optional;
 

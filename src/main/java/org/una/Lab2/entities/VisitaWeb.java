@@ -53,13 +53,13 @@ public class VisitaWeb implements Serializable {
     @Setter(AccessLevel.NONE)
     private Date fechaSalida;
     
-    //@ManyToOne 
-   // @JoinColumn(name="lab2_paginas_web_id")
-  //  private PaginaWeb paginaWeb;
+    @ManyToOne
+    @JoinColumn(name="lab2_paginas_web_id")
+    private PaginaWeb paginaWeb;
     
-    //@ManyToOne 
-   // @JoinColumn(name="lab2_navegador_id")
-  //  private Navegador navegador;
+    @ManyToOne
+    @JoinColumn(name="lab2_navegador_id")
+    private Navegador navegador;
     
     private static final long serialVersionUID = 1L;
 

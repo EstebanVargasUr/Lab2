@@ -1,10 +1,11 @@
-package org.una.entities;
+package org.una.Lab2.entities;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -33,10 +34,10 @@ public class CategoriaWeb implements Serializable {
 
     @Column
     private boolean estado;
-/*
+
     @ManyToMany(mappedBy = "categoriaWeb")
     private List<PaginaWeb> paginasWeb;
-*/
+
     private static final long serialVersionUID = 1L;
 
     @PrePersist
