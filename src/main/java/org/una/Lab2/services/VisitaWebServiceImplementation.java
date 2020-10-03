@@ -24,7 +24,6 @@ public class VisitaWebServiceImplementation implements IVisitaWebService {
             return null;
         }
     }
-
     private Optional<List<VisitaWebDTO>> findList(Optional<List<VisitaWeb>> list) {
         if (list.isPresent()) {
             return findList(list.get());
@@ -32,7 +31,6 @@ public class VisitaWebServiceImplementation implements IVisitaWebService {
             return null;
         }
     }
-
     private Optional<VisitaWebDTO> oneToDto(Optional<VisitaWeb> one) {
         if (one.isPresent()) {
             VisitaWebDTO visitaWebDTO = MapperUtils.DtoFromEntity(one.get(), VisitaWebDTO.class);
@@ -41,18 +39,22 @@ public class VisitaWebServiceImplementation implements IVisitaWebService {
             return null;
         }
     }
-
     @Override
     @Transactional(readOnly = true)
     public Optional<List<VisitaWebDTO>> findAll() {
         return findList(visitaWebRepository.findAll());
     }
-
+    
     @Override
     @Transactional(readOnly = true)
     public Optional<VisitaWebDTO> findById(Long id) {
         return oneToDto(visitaWebRepository.findById(id));
+    }
 
+    @Override
+     @Transactional(readOnly = true)
+    public Optional<List<VisitaWebDTO>> findByPaginaWebIdAndNavegadorId(Long id1, Long id2) {
+        return findList(visitaWebRepository.findByPaginaWebIdAndNavegadorId(id1, id2));
     }
     
 }

@@ -25,7 +25,7 @@ public class CategoriaWeb implements Serializable {
     private Long id;
 
     @Column(name = "nombre", length = 100)
-    private String nombreAerolinea;
+    private String nombreCategoria;
 
     @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.DATE)

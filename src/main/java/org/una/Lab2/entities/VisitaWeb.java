@@ -59,7 +59,7 @@ public class VisitaWeb implements Serializable {
     
     @ManyToOne
     @JoinColumn(name="lab2_navegador_id")
-    private Navegador navegador;
+    private Navegador navegador;    
     
     private static final long serialVersionUID = 1L;
 

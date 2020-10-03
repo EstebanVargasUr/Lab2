@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.una.Lab2.entities.Navegador;
+import org.una.Lab2.entities.PaginaWeb;
 
 /**
  *
@@ -27,7 +29,6 @@ public class VisitaWebDTO {
     private Long id; 
     private Date fechaConsulta;
     private Date fechaSalida;
-
-  //private Navegador navegador;
-  //private PaginaWeb paginaWeb;
+    private PaginaWeb paginaWeb;
+    private Navegador navegador;
 }

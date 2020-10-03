@@ -49,16 +49,18 @@ public class PaginaWeb implements Serializable {
     @Setter(AccessLevel.NONE)
     private Date fechaRegistro;
    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
-    private List<VisitaWeb> visitasWeb = new ArrayList<>();
-
+   
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "lab2_paginasWeb_categoriasWeb",
             joinColumns = @JoinColumn(name = "lab2_categorias_web_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "lab2_paginas_web_id",
                     referencedColumnName = "id"))
+    
     private List<CategoriaWeb> categoriaWeb;
     
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb")
+    private List<VisitaWeb> visitasWeb = new ArrayList<>();
+     
     private static final long serialVersionUID = 1L;
 
     @PrePersist
