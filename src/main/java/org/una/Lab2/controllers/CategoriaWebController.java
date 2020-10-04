@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.una.Lab2.dto.CategoriaWebDTO;
+import org.una.Lab2.dto.PaginaWebDTO;
 import org.una.Lab2.services.ICategoriaWebService;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/lab2_categorias_web")
@@ -34,6 +37,15 @@ public class CategoriaWebController {
     public ResponseEntity<?> findById(@PathVariable(value = "id") Long id) {
         try {
             return new ResponseEntity(categoriaWebService.findById(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/pagina/{id}{Fecha inicial}{Fecha final}")
+    @ApiOperation(value = "Obtiene una categoria web por el id de la pagina web y la fecha de registro de la categoria", response = PaginaWebDTO.class, tags = "Categorias Web")
+    public ResponseEntity<?> findByPaginaWebIdAndFechaRegistroBetween(@PathVariable(value = "id") Long id, @PathVariable(value = "Fecha inicial") Date startDate, @PathVariable(value = "Fecha final") Date endDate)  {
+        try {
+            return new ResponseEntity(categoriaWebService.findByPaginaWebIdAndFechaRegistroBetween(id,startDate,endDate), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }

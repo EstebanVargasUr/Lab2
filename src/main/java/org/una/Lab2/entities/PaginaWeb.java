@@ -59,10 +59,7 @@ public class PaginaWeb implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb") 
     private List<PaginaWeb_CategoriaWeb> paginasWeb_CategoriasWeb = new ArrayList<>();
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paginaWeb")
-    private List<VisitaWeb> visitasWeb = new ArrayList<>();
-     
+
     private static final long serialVersionUID = 1L;
 
     @PrePersist
